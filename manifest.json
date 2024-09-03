@@ -1,0 +1,22 @@
+{
+    "name": "Star Wars DataBase",
+    "short_name": "SWDB",
+    "description": "Uma aplicação para buscar e cadastrar personagens de Star Wars.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ffcc00",
+    "icons": [
+      {
+        "src": "images/icon_vader.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "images/icon_vader.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

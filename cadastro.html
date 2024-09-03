@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <title>Star Wars DataBase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon_vader.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+              .then((registration) => {
+                console.log('Service Worker registrado com sucesso:', registration);
+              })
+              .catch((error) => {
+                console.error('Falha ao registrar o Service Worker:', error);
+              });
+          });
+        }
+      </script>
+
+</head>
+
+<body>
+    <div class="logo">
+        <img src="images/Star Wars Logo.png" alt="Logo Star Wars">
+    </div>
+
+    <div class="cadastro-container">
+        <h2>Cadastro de Personagem</h2>
+        <form id="cadastroForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome do personagem" required>
+
+            <label for="genero">Gênero:</label>
+            <input type="text" id="genero" name="genero" placeholder="Digite o gênero do personagem" required>
+
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" name="altura" placeholder="Digite a altura do personagem" required>
+
+            <label for="planeta">Planeta Natal:</label>
+            <input type="text" id="planeta" name="planeta" placeholder="Digite o planeta natal do personagem" required>
+
+            <input type="submit" value="Cadastrar" id="botao">
+        </form>
+        <a href="index.html" class="voltar"><button>Voltar para a Página Inicial</button></a>
+    </div>
+</body>
+<script src="./script.js"></script> 
+</html>

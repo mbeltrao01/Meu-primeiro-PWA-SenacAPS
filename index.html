@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <title>Star Wars DataBase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon_vader.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+              .then((registration) => {
+                console.log('Service Worker registrado com sucesso:', registration);
+              })
+              .catch((error) => {
+                console.error('Falha ao registrar o Service Worker:', error);
+              });
+          });
+        }
+      </script>
+
+</head>
+
+<body>
+    <div class="logo">
+        <img src="images/Star Wars Logo.png" alt="Logo Star Wars">
+    </div>
+
+    <div class="bnt-cadastro">
+        <a href="cadastro.html">
+            <button>Cadastrar Personagem</button>
+        </a>
+    </div>
+
+    <div class="buscar"> 
+        <input type="text" id="nomeInput" placeholder="Digite o nome do personagem"> 
+        <input type="button" value="Buscar" id="botao" onclick="procurar()"> 
+    </div>
+
+    <div class="info-container">
+        <div class="info">
+            <h2 id="nomeDisplay"></h2> 
+            <h2 id="generoDisplay"></h2>
+            <h2 id="alturaDisplay"></h2>
+            <h2 id="planetaDisplay"></h2>
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script> 
+</html>
