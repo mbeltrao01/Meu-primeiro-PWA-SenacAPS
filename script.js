@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const nomeInput = document.querySelector('#nomeInput');
-  const cadastroForm = document.querySelector('#cadastroForm');
+    const nomeInput = document.querySelector('#nomeInput');
+    const cadastroForm = document.querySelector('#cadastroForm');
+    const buscarButton = document.querySelector('#botao');
 
     function getPersistedCharacters() {
         const personagensJSON = localStorage.getItem('personagens');
@@ -51,30 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-  function procurar() {
-      const nome = nomeInput.value.trim();
+    function procurar() {
+        console.log("Botão de buscar clicado!");
+        const nome = nomeInput.value.trim();
 
         if (!nome) {
             alert('Por favor, digite um nome para buscar.');
             return;
         }
 
-      const personagensLocais = buscarLocalmente(nome);
-      if (personagensLocais.length > 0) {
-          exibirPersonagem(personagensLocais[0]);
-      } else {
-          buscarNaAPI(nome).then(personagemAPI => {
-              if (personagemAPI) {
-                  exibirPersonagem(personagemAPI);
-              } else {
-                  document.querySelector('#nomeDisplay').innerText = 'Personagem não encontrado.';
-                  document.querySelector('#generoDisplay').innerText = '';
-                  document.querySelector('#alturaDisplay').innerText = '';
-                  document.querySelector('#planetaDisplay').innerText = '';
-              }
-          });
-      }
-  }
+        const personagensLocais = buscarLocalmente(nome);
+        if (personagensLocais.length > 0) {
+            exibirPersonagem(personagensLocais[0]);
+        } else {
+            buscarNaAPI(nome).then(personagemAPI => {
+                if (personagemAPI) {
+                    exibirPersonagem(personagemAPI);
+                } else {
+                    document.querySelector('#nomeDisplay').innerText = 'Personagem não encontrado.';
+                    document.querySelector('#generoDisplay').innerText = '';
+                    document.querySelector('#alturaDisplay').innerText = '';
+                    document.querySelector('#planetaDisplay').innerText = '';
+                }
+            });
+        }
+    }
 
     function cadastrar() {
         const nome = document.querySelector('#nome').value.trim();
@@ -101,13 +103,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-  if (nomeInput) {
-      nomeInput.addEventListener('keypress', (event) => {
-          if (event.key === 'Enter') {
-              procurar();
-          }
-      });
-  }
+    if (nomeInput) {
+        nomeInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                procurar();
+            }
+        });
+    }
+
+    if (buscarButton) {
+        buscarButton.addEventListener('click', procurar);
+    }
 
     if (cadastroForm) {
         cadastroForm.addEventListener('submit', (event) => {
