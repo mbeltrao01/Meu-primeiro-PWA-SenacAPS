@@ -46,7 +46,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.bnt-cadastro button:hover {
+.bnt-cadastro button[type="button"]:hover {
     background-color: #ffaa00;
 }
 
@@ -174,58 +174,4 @@ body {
 
 .cadastro-container .voltar button:hover {
     background-color: #ffaa00;
-}
-
-@media (max-width: 768px) {
-    .info-container, .cadastro-container {
-        padding: 15px;
-        max-width: 90%;
-    }
-
-    .info h2, .cadastro-container h2 {
-        font-size: 22px;
-    }
-
-    .cadastro-container label {
-        font-size: 16px;
-    }
-
-    .cadastro-container input[type="text"],
-    .cadastro-container input[type="number"] {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .cadastro-container input[type="submit"],
-    .cadastro-container .voltar button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .info-container, .cadastro-container {
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    .info h2, .cadastro-container h2 {
-        font-size: 20px;
-    }
-
-    .cadastro-container label {
-        font-size: 14px;
-    }
-
-    .cadastro-container input[type="text"],
-    .cadastro-container input[type="number"] {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    .cadastro-container input[type="submit"],
-    .cadastro-container .voltar button {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
 }
